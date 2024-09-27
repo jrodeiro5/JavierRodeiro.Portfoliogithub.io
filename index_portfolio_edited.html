@@ -1,0 +1,404 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Javier Rodeiro - Digital Analyst Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+		<style>
+			:root {
+				--primary-color: #2c3e50;
+				--secondary-color: #3498db;
+				--accent-color: #e74c3c;
+				--text-color: #333;
+				--light-bg: #ecf0f1;
+			}
+			
+			body, html {
+				font-family: 'Roboto', Arial, sans-serif;
+				line-height: 1.6;
+				color: var(--text-color);
+				margin: 0;
+				padding: 0;
+				scroll-behavior: smooth;
+				overflow-x: hidden;
+			}
+
+			/* Header Section */
+			.container {
+				width: 80%;
+				margin: auto;
+				overflow: hidden;
+			}
+			
+			header {
+				background: var(--primary-color);
+				color: #ffffff;
+				padding: 1rem 0;
+				position: fixed;
+				width: 100%;
+				top: 0;
+				z-index: 1000;
+				box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+				transition: background-color 0.5s ease;
+			}
+
+			header a {
+				color: #ffffff;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-size: 1rem;
+			}
+
+			header ul {
+				padding: 0;
+				list-style: none;
+				display: flex;
+				justify-content: flex-end;
+			}
+
+			header li {
+				padding: 0 1rem;
+			}
+
+			header #branding {
+				display: flex;
+				align-items: center;
+			}
+
+			header #branding h1 {
+				margin: 0;
+				font-size: 1.5rem;
+				transition: opacity 0.6s ease;
+			}
+
+			header nav {
+				display: flex;
+				align-items: center;
+			}
+
+			.highlight, header .current a {
+				color: var(--secondary-color);
+				font-weight: bold;
+			}
+			
+			/* Hero Section */
+			#showcase {
+				background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('/api/placeholder/1200/600') no-repeat center center/cover;
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				color: #ffffff;
+				position: relative;
+				overflow: hidden;
+				padding-top: 60px;
+			}
+
+			#showcase h1 {
+				font-size: 3rem;
+				margin-bottom: 1rem;
+				animation: fadeIn 2s ease-out;
+			}
+
+			#showcase p {
+				font-size: 1.5rem;
+				margin-bottom: 2rem;
+				animation: fadeInUp 2s ease-out;
+			}
+
+			#showcase .profile-photo {
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				overflow: hidden;
+				margin-bottom: 2rem;
+				animation: zoomIn 2s ease-out;
+			}
+
+			#showcase .profile-photo img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.btn {
+				display: inline-block;
+				background: var(--secondary-color);
+				color: #ffffff;
+				padding: 0.75rem 1.5rem;
+				text-decoration: none;
+				border-radius: 5px;
+				transition: background-color 0.3s ease, transform 0.3s ease;
+			}
+
+			.btn:hover {
+				background: #2980b9;
+				transform: translateY(-3px);
+			}
+			
+			/* Animations */
+			@keyframes fadeIn {
+				0% { opacity: 0; }
+				100% { opacity: 1; }
+			}
+
+			@keyframes fadeInUp {
+				0% { opacity: 0; transform: translateY(20px); }
+				100% { opacity: 1; transform: translateY(0); }
+			}
+
+			@keyframes zoomIn {
+				0% { transform: scale(0); }
+				100% { transform: scale(1); }
+			}
+
+			/* Projects Section */
+			#projects, #about, #metal-music {
+				padding: 4rem 0;
+			}
+
+			#projects {
+				background: var(--light-bg);
+			}
+
+			.projects-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				animation: fadeIn 2s ease-in;
+			}
+
+			.project {
+				background: #ffffff;
+				border-radius: 5px;
+				overflow: hidden;
+				box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.project:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+			}
+
+			.project img {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+				transition: transform 0.5s ease;
+			}
+
+			.project:hover img {
+				transform: scale(1.05);
+			}
+
+			.project-content {
+				padding: 1.5rem;
+			}
+
+			.project h3 {
+				margin-top: 0;
+				color: var(--primary-color);
+			}
+			
+			/* About Section */
+			#about {
+				background: var(--primary-color);
+				color: #ffffff;
+			}
+			
+			/* Metal Music Section */
+			#metal-music {
+				background: var(--light-bg);
+				text-align: center;
+			}
+			
+			/* Footer */
+			footer {
+				background: var(--primary-color);
+				color: #ffffff;
+				text-align: center;
+				padding: 2rem 0;
+			}
+
+			.social a {
+				color: #ffffff;
+				font-size: 1.5rem;
+				margin: 0 0.5rem;
+				transition: color 0.3s ease;
+			}
+
+			.social a:hover {
+				color: var(--secondary-color);
+			}
+
+			@media (max-width: 768px) {
+				header #branding,
+				header nav,
+				header nav ul {
+					flex-direction: column;
+					text-align: center;
+				}
+
+				header li {
+					padding: 0.5rem;
+				}
+
+				#showcase h1 {
+					font-size: 2rem;
+				}
+
+				#showcase p {
+					font-size: 1.2rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div id="branding">
+					<h1><span class="highlight">Javier Rodeiro</span> | Digital Analyst</h1>
+				</div>
+				<nav>
+					<ul>
+						<li class="current"><a href="#home">Home</a></li>
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#metal-music">Metal Music</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<!-- Hero Section with Profile Picture -->
+		<section id="showcase">
+			<div class="container">
+				<div class="profile-photo">
+					<img src="/api/placeholder/150" alt="Profile Photo">
+				</div>
+				<h1>Transforming Data into Action</h1>
+				<p>Driving business growth through data-driven insights</p>
+				<a href="#projects" class="btn">View My Work</a>
+			</div>
+		</section>
+
+		<!-- Projects Section with 6 Projects in 2 Rows (3x3) -->
+<section id="projects">
+	<div class="container">
+		<h2>Featured Projects</h2>
+		<div class="projects-grid">
+			<div class="project">
+				<img src="/api/placeholder/400/300" alt="E-commerce Analytics">
+				<div class="project-content">
+					<h3>E-commerce Analytics</h3>
+					<p>Improved conversion rates by 25% through data-driven insights</p>
+					<a href="#" class="btn">Learn More</a>
+				</div>
+			</div>
+			<div class="project">
+				<img src="/api/placeholder/400/300" alt="SEO Optimization">
+				<div class="project-content">
+					<h3>SEO Optimization</h3>
+					<p>Increased organic traffic by 40% for a major fashion brand</p>
+					<a href="#" class="btn">Learn More</a>
+				</div>
+			</div>
+			<div class="project">
+				<img src="/api/placeholder/400/300" alt="CRO Analysis">
+				<div class="project-content">
+					<h3>CRO Analysis</h3>
+					<p>Identified key pain points in user journey, leading to 15% increase in sales</p>
+					<a href="#" class="btn">Learn More</a>
+				</div>
+			</div>
+			<div class="project">
+				<img src="/api/placeholder/400/300" alt="Data Visualization">
+				<div class="project-content">
+					<h3>Data Visualization</h3>
+					<p>Enhanced decision-making with clear and insightful dashboards</p>
+					<a href="#" class="btn">Learn More</a>
+				</div>
+			</div>
+			<div class="project">
+				<img src="/api/placeholder/400/300" alt="Customer Analytics">
+				<div class="project-content">
+					<h3>Customer Analytics</h3>
+					<p>Improved customer retention rates with predictive analytics</p>
+					<a href="#" class="btn">Learn More</a>
+				</div>
+			</div>
+			<div class="project">
+				<img src="/api/placeholder/400/300" alt="Market Research">
+				<div class="project-content">
+					<h3>Market Research</h3>
+					<p>Leveraged data to uncover new business opportunities</p>
+					<a href="#" class="btn">Learn More</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+		<!-- About Section -->
+		<section id="about">
+			<div class="container">
+				<h2>About Me</h2>
+				<p>As a Digital Analyst at El Arte de Medir | Ayesa, I specialize in transforming complex data into actionable insights for some of the biggest names in the fashion industry. My expertise spans data extraction, report generation, and CRO analysis, utilizing cutting-edge tools like Google Analytics 4, GTM, and Looker Studio.</p>
+				<p>Armed with a Master's in Digital Analytics from KSchool and a degree in Advertising and Public Relations from CESUGA - San Jorge University, I bring a unique blend of analytical skills and creative thinking to every project. My Cambridge Certificate of Proficiency in English (C2) ensures clear communication in global business environments.</p>
+			</div>
+		</section>
+
+		<!-- Metal Music Blog Section -->
+		<section id="metal-music">
+			<div class="container">
+				<h2>My Metal Music Blog</h2>
+				<p>When I'm not crunching numbers, I'm headbanging to some of the best metal tracks out there. Visit my blog for reviews, interviews, and insights into the metal scene.</p>
+				<a href="https://riffriot.com/" target="_blank" class="btn">Explore RiffRiot</a>
+			</div>
+		</section>
+
+		<!-- Footer Section -->
+		<footer>
+			<div class="container">
+				<p>&copy; 2024 Javier Rodeiro - Digital Analyst Portfolio</p>
+				<div class="social">
+					<a href="https://www.linkedin.com/in/javier-rodeiro-rodr%C3%ADguez-b91493198" target="_blank"><i class="fab fa-linkedin"></i></a>
+					<a href="mailto:javierrodeirorodriguez@gmail.com"><i class="fas fa-envelope"></i></a>
+				</div>
+			</div>
+		</footer>
+
+		<!-- jQuery for Smooth Scrolling and Animations -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				// Smooth scrolling for navigation links
+				$('a[href^="#"]').on('click', function(event) {
+					var target = $(this.getAttribute('href'));
+					if( target.length ) {
+						event.preventDefault();
+						$('html, body').stop().animate({
+							scrollTop: target.offset().top - 60
+						}, 1000);
+					}
+				});
+				
+				// Add active class to nav items when scrolling
+				$(window).scroll(function() {
+					var scrollDistance = $(window).scrollTop();
+					
+					$('section').each(function(i) {
+						if ($(this).position().top <= scrollDistance + 100) {
+							$('nav a.active').removeClass('active');
+							$('nav a').eq(i).addClass('active');
+						}
+					});
+				}).scroll();
+			});
+		</script>
+	</body>
+</html>
